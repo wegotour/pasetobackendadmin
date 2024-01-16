@@ -14,7 +14,7 @@ func TestCreateNewAdminRole(t *testing.T) {
 	admindata.Username = "admin"
 	admindata.Password = "adminpass"
 	admindata.Role = "admin"
-	mconn := SetConnection("MONGOSTRING", "dbpakarbi")
+	mconn := SetConnection("MONGOSTRING", "wegotour")
 	CreateNewAdminRole(mconn, "admin", admindata)
 }
 
@@ -32,7 +32,7 @@ func CreateNewAdminToken(t *testing.T) {
 	admindata.Role = "admin"
 
 	// Create a MongoDB connection
-	mconn := SetConnection("MONGOSTRING", "dbpakarbi")
+	mconn := SetConnection("MONGOSTRING", "wegotour")
 
 	// Call the function to create a user and generate a token
 	err := CreateAdminAndAddToken("your_private_key_env", mconn, "admin", admindata)
@@ -43,7 +43,7 @@ func CreateNewAdminToken(t *testing.T) {
 }
 
 func TestGFCPostHandlerAdmin(t *testing.T) {
-	mconn := SetConnection("MONGOSTRING", "dbpakarbi")
+	mconn := SetConnection("MONGOSTRING", "wegotour")
 	var admindata Admin
 	admindata.Username = "admin"
 	admindata.Password = "adminpass"
@@ -64,12 +64,12 @@ func TestGeneratePrivateKeyPaseto(t *testing.T) {
 	privateKey, publicKey := watoken.GenerateKey()
 	fmt.Println(privateKey)
 	fmt.Println(publicKey)
-	hasil, err := watoken.Encode("testpakarbi", privateKey)
+	hasil, err := watoken.Encode("wegotours", privateKey)
 	fmt.Println(hasil, err)
 }
 
 func TestHashFunction(t *testing.T) {
-	mconn := SetConnection("MONGOSTRING", "dbpakarbi")
+	mconn := SetConnection("MONGOSTRING", "wegotour")
 	var admindata Admin
 	admindata.Username = "admin"
 	admindata.Password = "testpass"
@@ -85,7 +85,7 @@ func TestHashFunction(t *testing.T) {
 }
 
 func TestIsPasswordValid(t *testing.T) {
-	mconn := SetConnection("MONGOSTRING", "dbpakarbi")
+	mconn := SetConnection("MONGOSTRING", "wegotour")
 	var admindata Admin
 	admindata.Username = "admin"
 	admindata.Password = "testpass"
@@ -95,7 +95,7 @@ func TestIsPasswordValid(t *testing.T) {
 }
 
 func TestAdminFix(t *testing.T) {
-	mconn := SetConnection("MONGOSTRING", "dbpakarbi")
+	mconn := SetConnection("MONGOSTRING", "wegotour")
 	var admindata Admin
 	admindata.Username = "admin"
 	admindata.Password = "adminpass"
